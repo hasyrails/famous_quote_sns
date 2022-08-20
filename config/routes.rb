@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'tweets#index'
-  devise for :users
+  devise_for :users
 end
