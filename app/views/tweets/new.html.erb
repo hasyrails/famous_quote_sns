@@ -1,0 +1,4 @@
+<%= form_with model: @tweet do |f| %>
+  <%= f.text_area :text, placeholder: "いまどうしてる？", rows: "3" %>
+  <%= f.submit "ツイート" %>
+<% end %>
