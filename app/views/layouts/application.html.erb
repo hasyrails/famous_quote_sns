@@ -23,6 +23,10 @@
       </div>
     <% end %>
 
+  <% if user_signed_in? %> <%# この行を追加する %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <% end %> <%# この行を追加する %>
+
     <%= yield %>
   </body>
 </html>
