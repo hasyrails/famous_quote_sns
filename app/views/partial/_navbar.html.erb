@@ -15,7 +15,9 @@
               <%= image_tag current_user.profile_photo, class: "avatar avatar-size32" %>
             <% end %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <% if user_signed_in? %> <%# この行を追加する %>
+               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <% end %> <%# この行を追加する %>
             </div>
           </li>
           <%# ==========ここまで追加する==========%>

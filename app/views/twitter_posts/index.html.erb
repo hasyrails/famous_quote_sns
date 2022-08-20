@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Twitter Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Picture</th>
+      <th>Kind</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @twitter_posts.each do |twitter_post| %>
+      <tr>
+        <td><%= twitter_post.content %></td>
+        <td><%= twitter_post.picture %></td>
+        <td><%= twitter_post.kind %></td>
+        <td><%= link_to 'Show', twitter_post %></td>
+        <td><%= link_to 'Edit', edit_twitter_post_path(twitter_post) %></td>
+        <td><%= link_to 'Destroy', twitter_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Twitter Post', new_twitter_post_path %>
