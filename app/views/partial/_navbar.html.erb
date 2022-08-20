@@ -1,16 +1,38 @@
 <nav class="global-nav">
   <div class="container">
-    <div class="navigation">
-      <ul class="left-actions">
-        <li class="nav-item">
-          <%= link_to "ホーム", root_path, class: "nav-link" %>
-        </li>
-      </ul>
-      <ul class="right-actions">
-        <li class="nav-item">
-          <%= link_to "ツイート", "#", class: "btn btn-primary tweet-btn" %>
-        </li>
-      </ul>
-    </div>
+    <% if user_signed_in? %>
+      <div class="navigation">
+        <ul class="left-actions">
+          <li class="nav-item">
+            <%= link_to "ホーム", root_path, class: "nav-link" %>
+          </li>
+        </ul>
+        <ul class="right-actions">
+
+          <%# ==========ここから追加する==========%>
+          <li class="nav-item dropdown">
+            <%= link_to "#", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", "data-toggle": :dropdown, "aria-haspopup": :true, "aria-expanded": false do %>
+              <%= image_tag current_user.profile_photo, class: "avatar avatar-size32" %>
+            <% end %>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+          <%# ==========ここまで追加する==========%>
+
+          <li class="nav-item">
+            <%= link_to "ツイート", "#", class: "btn btn-primary tweet-btn" %>
+          </li>
+        </ul>
+      </div>
+    <% else %>
+      <div class="navigation">
+        <ul class="left-actions">
+          <li class="nav-item">
+            <%= link_to "Kakugen", "#", class: "nav-brand" %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
   </div>
 </nav>

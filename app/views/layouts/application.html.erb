@@ -23,10 +23,15 @@
       </div>
     <% end %>
 
-  <% if user_signed_in? %> <%# この行を追加する %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <% end %> <%# この行を追加する %>
+    <% if user_signed_in? %> <%# この行を追加する %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% end %> <%# この行を追加する %>
 
-    <%= yield %>
+    <%# ==========ここにcontainerクラスを追加する========== %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%# ==========divの閉じタグを追加========== %>
+
   </body>
 </html>
