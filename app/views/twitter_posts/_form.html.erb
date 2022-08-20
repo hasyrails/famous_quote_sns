@@ -1,0 +1,32 @@
+<%= form_with(model: @twitter_post, local: true) do |form| %>
+  <% if @twitter_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(twitter_post.errors.count, "error") %> prohibited this twitter_post from being saved:</h2>
+
+      <ul>
+      <% twitter_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

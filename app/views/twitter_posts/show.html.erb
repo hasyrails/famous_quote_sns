@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @twitter_post.content %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @twitter_post.picture %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @twitter_post.kind %>
+</p>
+
+<%= link_to 'Edit', edit_twitter_post_path(@twitter_post) %> |
+<%= link_to 'Back', twitter_posts_path %>
