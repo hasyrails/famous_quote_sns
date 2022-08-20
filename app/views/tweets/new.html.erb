@@ -1,0 +1,16 @@
+<div class="card tweet-card">
+  <div class="card-header">
+    ツイートする
+  </div>
+  <div class="card-body">
+    <%= form_with model: @tweet do |f| %>
+      <div class="tweet-body">
+        <%= image_tag current_user.profile_photo, class: "avatar avatar-size32" %>
+        <%= f.text_area :text, placeholder: "いまどうしてる？", class: "form-control", rows: "3" %>
+      </div>
+      <div class="buttons">
+        <%= f.submit "ツイート", class: "btn btn-primary tweet-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
