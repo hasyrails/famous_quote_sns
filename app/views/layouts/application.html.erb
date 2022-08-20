@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FamousQuoteSns</title>
+    <title>TechpitTweet2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <%# <nav>...</nav>の間のコードを全て消して下の一行に入れ替える %>
+    <%= render 'partial/navbar' %>
+
     <%= yield %>
   </body>
 </html>
