@@ -3,8 +3,10 @@
     <div class="card">
       <div class="stream-item">
         <div class="content">
-          <div class="stream-item-header">
+        <% if user_signed_in? %>
             <%= image_tag current_user.profile_photo, class: "avatar avatar-size48" %>
+        <% end %>
+          <div class="stream-item-header">
             <div class="user-profile-link">
               <%= link_to "@" + "#{tweet.user.username}", "#", class: "username" %>
             </div>
