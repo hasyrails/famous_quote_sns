@@ -4,8 +4,17 @@
 </div>
 
 <h2>Step 3</h2>
-<!-- Twitter投稿へのリンク。(herokuでアプリ作成後にurlを追記する) -->
-<a href="#" target="_blank" class="square_btn" data-show-count="false">Twitter投稿へ</a>
+<a href="https://twitter.com/share?url=https://serifoo.herokuapp.com/twitter_posts/<%= @twitter_post.id %>&hashtags=serifoo" target="_blank" class="square_btn" data-show-count="false">Twitter投稿へ</a>
+
+<!-- ここから追加する -->
+<div>
+  <%= link_to "画像編集へ戻る", edit_twitter_post_path(@twitter_post) %>
+</div>
+<!-- ここまで追加する -->
+
+<div>
+  <%= link_to "トップページへ", root_path %>
+</div>
 
 <div>
   <%= link_to "トップページへ", root_path %>
