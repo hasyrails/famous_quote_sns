@@ -13,9 +13,7 @@
               <%= image_tag current_user.profile_photo, class: "avatar avatar-size32" %>
             <% end %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <% if user_signed_in? %> <%# この行を追加する %>
                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              <% end %> <%# この行を追加する %>
             </div>
           </li>
           <li class="nav-item">
@@ -30,7 +28,11 @@
       <div class="navigation">
         <ul class="left-actions">
           <li class="nav-item">
-            <%= link_to "Techpit Tweet", "#", class: "nav-brand" %>
+            <%= link_to "Serifoo", root_path, class: "nav-brand" %>
+          </li>
+        </ul>
+        <ul class="right-actions">
+            <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary tweet-btn" %>
           </li>
         </ul>
       </div>
