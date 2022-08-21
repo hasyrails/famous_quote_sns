@@ -1,6 +1,6 @@
 <h2>Step 1</h2>
 
-<%= form_with(model: @twitter_post, local: true) do |form| %>
+<%= form_with model: @twitter_post, local: true  do |form| %>
   <% if @twitter_post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(twitter_post.errors.count, "error") %> prohibited this twitter_post from being saved:</h2>
