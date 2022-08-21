@@ -165,6 +165,7 @@ GEM
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (0.20.0)
     popper_js (1.16.0)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -295,6 +296,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mini_magick
+  pg (= 0.20.0)
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.8, >= 5.2.8.1)
