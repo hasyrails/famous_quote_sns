@@ -3,16 +3,16 @@
     <div class="card">
       <div class="stream-item">
         <div class="content">
-        <% if user_signed_in? %>
-            <%= image_tag current_user.profile_photo, class: "avatar avatar-size48" %>
-        <% end %>
           <div class="stream-item-header">
-            <div class="user-profile-link">
-              <%= link_to "@" + "#{tweet.user.username}", "#", class: "username" %>
-            </div>
-            <div class="time">
-              ・<%= time_ago_in_words(tweet.created_at) %>
-            </div>
+            <% if user_signed_in? %>
+              <%= image_tag current_user.profile_photo, class: "avatar avatar-size48" %>
+              <div class="user-profile-link">
+                <%= link_to "@" + "#{tweet.user.username}", "#", class: "username" %>
+              </div>
+              <div class="time">
+                ・<%= time_ago_in_words(tweet.created_at) %>
+              </div>
+            <% end %>
           </div>
           <div class="tweet-text">
             <%= safe_join(tweet.text.split("\n"), tag(:br)) %>
@@ -22,4 +22,3 @@
     </div>
   <% end %>
 </div>
-

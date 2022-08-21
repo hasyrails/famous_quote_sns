@@ -30,7 +30,21 @@ body {
     color: #ffffff;
 }
 
-/* ===ここまで追加する=== */
+
+.form-group input[type="radio"] {
+  display: none;
+}
+/* 画像部分に余白を持たせる */
+label img {
+  margin: 3px;
+  padding: 8px;
+}
+
+/* 選択されたラジオボタンの画像の背景をオレンジ色に変える */
+// .form-group input[type="radio"]:checked + label img{
+//   background: orange;
+// }
+// 色変わらず
 
 
 /*
