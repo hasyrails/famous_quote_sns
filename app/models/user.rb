@@ -1,7 +1,9 @@
 class User < ApplicationRecord
 
   # この行を追加する
-  has_many :tweets, dependent: :destroy
+  # has_many :tweets, dependent: :destroy
+  has_many :twitter_posts, dependent: :destroy
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

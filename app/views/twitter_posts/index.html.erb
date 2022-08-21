@@ -1,21 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Twitter Posts</h1>
-
-<div class="twitter-card">
-    <div class="twitter-card-picture-frame">
-      <% @twitter_posts.each do |twitter_post| %>
-        <%= twitter_post.content %>
-        <%= image_tag twitter_post.picture %>
-        <%= twitter_post.kind %>
-        <%= link_to 'Show', twitter_post %>
-        <%= link_to 'Edit', edit_twitter_post_path(twitter_post) %>
-        <%= link_to 'Destroy', twitter_post, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </tr>
-      <% end %>
+<div class="tweet-card">
+  <% @twitter_posts.each do |twitter_post| %>
+    <div class="card">
+      <div class="stream-item">
+        <div class="content">
+          <div class="stream-item-header">
+            <% if user_signed_in? %>
+              <%= image_tag current_user.profile_photo, class: "avatar avatar-size48" %>
+              <div class="user-profile-link">
+                <%= link_to "@" + "#{twitter_post.user.username}", "#", class: "username" %>
+              </div>
+              <div class="time">
+                ・<%= time_ago_in_words(twitter_post.created_at) %>
+              </div>
+            <% end %>
+          </div>
+          <div class="tweet-content">
+            <%# <div class="tweet-text"> %>
+              <%# <%= safe_join(twitter_post.content.split("\n"), tag(:br)) %>
+            <%# </div> %>
+            <div class="tweet-img">
+              <%= image_tag twitter_post.picture, :width => '200', :height => '100' %>
+            </div>
+            <div>
+              <%= safe_join(twitter_post.content.split("\n"), tag(:br)) %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  <% end %>
 </div>
-
-<br>
-
-<%= link_to 'New Twitter Post', new_twitter_post_path %>

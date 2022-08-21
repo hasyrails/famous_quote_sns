@@ -2,7 +2,7 @@ class TwitterPostsController < ApplicationController
   before_action :set_twitter_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @twitter_posts = TwitterPost.all
+    @twitter_posts = TwitterPost.includes(:user).order('created_at DESC')
   end
 
   def show
@@ -63,8 +63,9 @@ class TwitterPostsController < ApplicationController
       @twitter_post = TwitterPost.find(params[:id])
     end
 
+
     def twitter_post_params
-      params.require(:twitter_post).permit(:content, :picture, :kind)
+      params.require(:twitter_post).permit(:content, :picture, :kind).merge(user_id: current_user.id)
     end
 
     def make_picture(id)
