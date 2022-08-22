@@ -107,7 +107,7 @@ class TwitterPostsController < ApplicationController
         pointsize = 45
       end
       # 文字色の指定
-      color = "white"
+      color = "black"
       # 文字を入れる場所の調整（0,0を変えると文字の位置が変わります）
       draw = "text 0,0 '#{sentense}'"
       # フォントの指定
@@ -115,11 +115,13 @@ class TwitterPostsController < ApplicationController
       # ↑これらの項目も文字サイズのように背景画像や文字数によって変えることができます
       # 選択された背景画像の設定
       case @twitter_post.kind
-      when "black" then
-        base = "app/assets/images/black.jpg"
-      # 今回は選択されていない場合は"red"となるようにしている
+      when "nigaoe_napoleon_horse" then
+        base = "app/assets/images/nigaoe_napoleon_horse.png"
+        # 今回は選択されていない場合は"red"となるようにしている
+      when "mother_nagusameru_boy" then
+        base = "app/assets/images/mother_nagusameru_boy.png"
       else
-        base = "app/assets/images/red.jpg"
+        base = "app/assets/images/black.jpg"
       end
       # minimagickを使って選択した画像を開き、作成した文字を指定した条件通りに挿入している
       image = MiniMagick::Image.open(base)
