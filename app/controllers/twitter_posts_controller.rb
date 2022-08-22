@@ -107,7 +107,7 @@ class TwitterPostsController < ApplicationController
         pointsize = 45
       end
       # 文字色の指定
-      color = "black"
+      color = "white"
       # 文字を入れる場所の調整（0,0を変えると文字の位置が変わります）
       draw = "text 0,0 '#{sentense}'"
       # フォントの指定
@@ -116,10 +116,10 @@ class TwitterPostsController < ApplicationController
       # 選択された背景画像の設定
       case @twitter_post.kind
       when "nigaoe_napoleon_horse" then
-        base = "app/assets/images/nigaoe_napoleon_horse.png"
+        base = "app/assets/images/nigaoe_napoleon_horse.jpg"
         # 今回は選択されていない場合は"red"となるようにしている
       when "mother_nagusameru_boy" then
-        base = "app/assets/images/mother_nagusameru_boy.png"
+        base = "app/assets/images/mother_nagusameru_boy.jpg"
       else
         base = "app/assets/images/black.jpg"
       end
