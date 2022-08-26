@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_08_21_190127) do
 
-  create_table "tweets", force: :cascade do |t|
-    t.text "text"
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "twitter_posts", force: :cascade do |t|
     t.text "content"
     t.string "picture"
